@@ -1,0 +1,38 @@
+<?php
+/**
+ * Implements hook_apps_app_info().
+ */
+function shanti_kmaps_apps_app_info() {
+    return array(
+        'configure form' => 'shanti_kmaps_configure_form',
+        'post install callback' => 'shanti_kmaps_post_install',
+    );
+}
+
+/**
+ * Configure form for the app.
+ */
+function shanti_kmaps_configure_form() {
+    $form = array();
+
+    $form['field_one'] = array(
+        '#type' => 'textfield',
+        '#title' => t('First Field'),
+        '#description' => t('Description of first field'),
+    );
+
+    $form['field_two'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Second Field'),
+        '#description' => t('Description of second field'),
+    );
+
+    return $form;
+}
+
+/**
+ * Post install callback.
+ */
+function shanti_kmaps_post_install() {
+    //Stub for now.
+}

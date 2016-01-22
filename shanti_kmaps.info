@@ -1,0 +1,9 @@
+name: "Shanti Kmaps Standalone App"
+description: "A standalone app exposing Kmaps using the Drupal app ecosystem"
+package: "Shanti Apps"
+core: "7.x"
+
+dependencies[] = "apps"
+
+apps[server] = "development"
+apps[local][manifests][] = "app/manifest.app"
