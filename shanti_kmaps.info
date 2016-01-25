@@ -18,5 +18,5 @@ apps[downloadable] = shanti_kmaps 7.x
 
 apps[dependencies][kmaps_explorer] = kmaps_explorer 1.0
 
-apps[downloadables][shanti_kmaps 7.x] = https://github.com/shanti-uva/drupal_shanti_standalone_downloads/raw/master/drupal_kmaps_standalone_app-master.zip
-apps[downloadables][kmaps_explorer 1.0] = https://github.com/shanti-uva/drupal_shanti_standalone_downloads/raw/master/drupal_kmaps_explorer-master.zip
+apps[downloadables][shanti_kmaps 7.x] = https://github.com/shanti-uva/drupal_shanti_standalone_downloads/raw/master/drupal_kmaps_standalone_app-master.tar
+apps[downloadables][kmaps_explorer 1.0] = https://github.com/shanti-uva/drupal_shanti_standalone_downloads/raw/master/drupal_kmaps_explorer-master.tar
