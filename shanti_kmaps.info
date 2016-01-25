@@ -6,4 +6,17 @@ core: "7.x"
 dependencies[] = "apps"
 
 apps[server] = "development"
-apps[local][manifests][] = "app/manifest.app"
+apps[manifest] = "app/manifest.app"
+apps[name] = Shanti Kmaps
+apps[description] = A standalone module that adds Kmaps to a Drupal 7 site
+apps[version] = 1.0
+apps[machine_name] = shanti_kmaps
+apps[author] = Gerard Ketuma
+apps[author_url] = http://www.virginia.edu/
+
+apps[downloadable] = shanti_kmaps 7.x
+
+apps[dependencies][kmaps_explorer] = kmaps_explorer
+
+apps[downloadables][shanti_kmaps 7.x] = https://github.com/shanti-uva/drupal_shanti_standalone_downloads/raw/master/drupal_kmaps_standalone_app-master.zip
+apps[downloadables][kmaps_explorer] = https://github.com/shanti-uva/drupal_shanti_standalone_downloads/raw/master/drupal_kmaps_explorer-master.zip
