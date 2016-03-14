@@ -5,7 +5,7 @@
 function shanti_kmaps_apps_app_info() {
     return array(
         'configure form' => 'shanti_kmaps_configure_form',
-        'post install callback' => 'shanti_kmaps_post_install',
+        'post install callback' => 'shanti_kmaps_app_post_install',
     );
 }
 
@@ -33,6 +33,36 @@ function shanti_kmaps_configure_form() {
 /**
  * Post install callback.
  */
-function shanti_kmaps_post_install() {
-    //Stub for now.
+function shanti_kmaps_app_post_install() {
+}
+
+/**
+ * Implements hook_apps_app_modules_enabled
+ */
+function shanti_kmaps_apps_app_modules_enabled($app) {
+    $modules_dir = drupal_get_path('module', 'kmaps_explorer') . '/..';
+    $libraries_dir = $modules_dir . '/../libraries';
+
+    recurse_copy($modules_dir . '/kmaps_modules/libraries', $libraries_dir);
+    recurse_copy($modules_dir . '/shanti_sarvaka_theme', $modules_dir . '/../themes/shanti_sarvaka_theme');
+    recurse_copy($modules_dir . '/shanti_sarvaka_kmaps', $modules_dir . '/../themes/shanti_sarvaka_kmaps');
+}
+
+/**
+ * Recursive copy function to move directories
+ */
+function recurse_copy($src,$dst) {
+    $dir = opendir($src);
+    @mkdir($dst);
+    while(false !== ( $file = readdir($dir)) ) {
+        if (( $file != '.' ) && ( $file != '..' )) {
+            if ( is_dir($src . '/' . $file) ) {
+                recurse_copy($src . '/' . $file,$dst . '/' . $file);
+            }
+            else {
+                copy($src . '/' . $file,$dst . '/' . $file);
+            }
+        }
+    }
+    closedir($dir);
 }

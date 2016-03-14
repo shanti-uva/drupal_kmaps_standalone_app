@@ -1,9 +1,49 @@
-name: "Shanti Kmaps Standalone App"
-description: "A standalone app exposing Kmaps using the Drupal app ecosystem"
-package: "Shanti Apps"
-core: "7.x"
+name = Shanti Kmaps Standalone App
+description = A standalone app exposing Kmaps using the Drupal app ecosystem
+package = Shanti Apps
+core = 7.x
 
-dependencies[] = "apps"
+dependencies[] = apps
 
-apps[server] = "development"
-apps[local][manifests][] = "app/manifest.app"
+apps[server] = development
+apps[name] = Shanti Kmaps
+apps[description] = A standalone module that adds Kmaps to a Drupal 7 site
+apps[version] = 1.0
+apps[machine_name] = shanti_kmaps
+apps[author] = Gerard Ketuma
+apps[author_url] = http://www.virginia.edu/
+apps[downloadable] = shanti_kmaps 7.x
+
+;Dependencies
+apps[dependencies][kmaps_explorer] = kmaps_explorer 1.0-beta
+apps[dependencies][shanti_kmaps_admin] = shanti_kmaps_admin 1.0
+apps[dependencies][libraries] = libraries 7.x-2.2
+apps[dependencies][jquery_update] = jquery_update 7.x-2.7
+apps[dependencies][json2] = json2 7.x-1.1
+apps[dependencies][kmaps_navigator] = kmaps_navigator 1.0
+apps[dependencies][pagerer] = pagerer 7.x-1.1
+apps[dependencies][views] = views 7.x-3.13
+apps[dependencies][ctools] = ctools 7.x-1.9
+
+;Libraries
+apps[libraries][shanti_sarvaka_modules] = shanti_sarvaka_modules 1.0
+apps[libraries][kmaps_modules] = kmaps_modules 1.0
+
+;Themes
+app[libraries][shanti_sarvaka_theme] = shanti_sarvaka_theme 1.0
+app[libraries][shanti_sarvaka_kmaps] = shanti_sarvaka_kmaps 1.0
+
+;apps[downloadables][shanti_kmaps 7.x] = http://badger.drupal-dev.shanti.virginia.edu/sites/badger.drupal-dev.shanti.virginia.edu/files/drupal_kmaps_standalone_app-master.tar
+apps[downloadables][kmaps_explorer 1.0-beta] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/kmaps_explorer.tar.gz
+apps[downloadables][shanti_kmaps_admin 1.0] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/shanti_kmaps_admin.tar.gz
+apps[downloadables][kmaps_modules 1.0] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/kmaps_modules.tar.gz
+apps[downloadables][libraries 7.x-2.2] = https://ftp.drupal.org/files/projects/libraries-7.x-2.2.zip
+apps[downloadables][jquery_update 7.x-2.7] = https://ftp.drupal.org/files/projects/jquery_update-7.x-2.7.zip
+apps[downloadables][json2 7.x-1.1] = https://ftp.drupal.org/files/projects/json2-7.x-1.1.zip
+apps[downloadables][kmaps_navigator 1.0] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/kmaps_navigator.tar.gz
+apps[downloadables][shanti_sarvaka_modules 1.0] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/shanti_sarvaka_modules.tar.gz
+apps[downloadables][pagerer 7.x-1.1] = https://ftp.drupal.org/files/projects/pagerer-7.x-1.1.zip
+apps[downloadables][views 7.x-3.13] = https://ftp.drupal.org/files/projects/views-7.x-3.13.zip
+apps[downloadables][ctools 7.x-1.9] = https://ftp.drupal.org/files/projects/ctools-7.x-1.9.zip
+apps[downloadables][shanti_sarvaka_theme 1.0] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/shanti_sarvaka_theme.tar.gz
+apps[downloadables][shanti_sarvaka_kmaps 1.0] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/shanti_sarvaka_kmaps.tar.gz
