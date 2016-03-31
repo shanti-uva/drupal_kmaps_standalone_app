@@ -46,6 +46,35 @@ function shanti_kmaps_apps_app_modules_enabled($app) {
     recurse_copy($modules_dir . '/kmaps_modules/libraries', $libraries_dir);
     recurse_copy($modules_dir . '/shanti_sarvaka_theme', $modules_dir . '/../themes/shanti_sarvaka_theme');
     recurse_copy($modules_dir . '/shanti_sarvaka_kmaps', $modules_dir . '/../themes/shanti_sarvaka_kmaps');
+
+    //Modules to enable
+    $modules_en = array(
+        'libraries',
+        'json2',
+        'ajaxsolr',
+        'fancytree',
+        'kmaps_navigator',
+        'shanti_admin_features',
+        'shanti_kmaps_admin',
+        'kmaps_explorer',
+        'explore_menu',
+        'jira_collector',
+        'user_prefs',
+        'jquery_update',
+        'pagerer',
+        'views',
+        'ctools',
+    );
+
+    module_enable($modules_en);
+
+    //Themes to enable
+    $themes_en = array(
+        'shanti_sarvaka',
+        'sarvaka_kmaps',
+    );
+
+    theme_enable($themes_en);
 }
 
 /**
