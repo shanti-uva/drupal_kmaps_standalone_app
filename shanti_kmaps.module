@@ -56,6 +56,7 @@ function shanti_kmaps_apps_app_modules_enabled($app) {
         'kmaps_navigator',
         'shanti_admin_features',
         'shanti_kmaps_admin',
+        'shanti_kmaps_tree',
         'kmaps_explorer',
         'explore_menu',
         'jira_collector',
