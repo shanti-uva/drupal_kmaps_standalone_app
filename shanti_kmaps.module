@@ -43,9 +43,9 @@ function shanti_kmaps_apps_app_modules_enabled($app) {
     $modules_dir = drupal_get_path('module', 'kmaps_explorer') . '/..';
     $libraries_dir = $modules_dir . '/../libraries';
 
-    recurse_copy($modules_dir . '/kmaps_modules/libraries', $libraries_dir);
-    recurse_copy($modules_dir . '/shanti_sarvaka_theme', $modules_dir . '/../themes/shanti_sarvaka_theme');
-    recurse_copy($modules_dir . '/shanti_sarvaka_kmaps', $modules_dir . '/../themes/shanti_sarvaka_kmaps');
+    system("cp -r " . $modules_dir . '/kmaps_modules/libraries/' . " " . $libraries_dir);
+	system("cp -r" . $modules_dir . '/shanti_sarvaka_theme/' . " " . $modules_dir . '/../themes/shanti_sarvaka_theme');
+	system("cp -r" . $modules_dir . '/shanti_sarvaka_kmaps/' . " " . $modules_dir . '/../themes/shanti_sarvaka_kmaps');
 
     //Modules to enable
     $modules_en = array(
@@ -66,7 +66,7 @@ function shanti_kmaps_apps_app_modules_enabled($app) {
         'ctools',
     );
 
-    module_enable($modules_en);
+	module_enable($modules_en);
 
     //Themes to enable
     $themes_en = array(
@@ -74,7 +74,7 @@ function shanti_kmaps_apps_app_modules_enabled($app) {
         'sarvaka_kmaps',
     );
 
-    theme_enable($themes_en);
+	theme_enable($themes_en);
 }
 
 /**
