@@ -43,7 +43,7 @@ function shanti_kmaps_apps_app_modules_enabled($app) {
     $modules_dir = drupal_get_path('module', 'kmaps_explorer') . '/..';
     $libraries_dir = $modules_dir . '/../libraries';
 
-    system("cp -r " . $modules_dir . '/kmaps_modules/libraries/' . " " . $libraries_dir);
+    system("cp -r " . $modules_dir . '/kmaps_modules/libraries/*' . " " . $libraries_dir);
 	system("cp -r" . $modules_dir . '/shanti_sarvaka_theme/' . " " . $modules_dir . '/../themes/shanti_sarvaka_theme');
 	system("cp -r" . $modules_dir . '/shanti_sarvaka_kmaps/' . " " . $modules_dir . '/../themes/shanti_sarvaka_kmaps');
 
