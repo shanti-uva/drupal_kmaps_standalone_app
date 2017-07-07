@@ -24,10 +24,15 @@ apps[dependencies][kmaps_navigator] = kmaps_navigator 1.0
 apps[dependencies][pagerer] = pagerer 7.x-1.1
 apps[dependencies][views] = views 7.x-3.13
 apps[dependencies][ctools] = ctools 7.x-1.9
+apps[dependencies][sharedshelf_api] = sharedshelf_api 1.0
+apps[dependencies][transcripts_ui] = transcripts_ui 1.0
 
 ;Libraries
 apps[libraries][shanti_sarvaka_modules] = shanti_sarvaka_modules 1.0
 apps[libraries][kmaps_modules] = kmaps_modules 1.0
+apps[libraries][shanti_kmaps_typeahead]  = shanti_kmaps_typeahead 1.0
+apps[libraries][shanti_kmaps_tree] = shanti_kmaps_tree 1.0
+apps[libraries][JSON-js] = JSON-js 2.0
 
 ;Themes
 apps[libraries][shanti_sarvaka_theme] = shanti_sarvaka_theme 1.0
@@ -47,3 +52,8 @@ apps[downloadables][views 7.x-3.13] = https://ftp.drupal.org/files/projects/view
 apps[downloadables][ctools 7.x-1.9] = https://ftp.drupal.org/files/projects/ctools-7.x-1.9.zip
 apps[downloadables][shanti_sarvaka_theme 1.0] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/shanti_sarvaka_theme.tar.gz
 apps[downloadables][shanti_sarvaka_kmaps 1.0] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/shanti_sarvaka_kmaps.tar.gz
+apps[downloadables][shanti_kmaps_typeahead 1.0] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/shanti_kmaps_typeahead.tar.gz
+apps[downloadables][shanti_kmaps_tree 1.0] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/shanti_kmaps_tree.tar.gz
+apps[downloadables][sharedshelf_api 1.0] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/sharedshelf_api.tar.gz
+apps[downloadables][transcripts_ui 1.0] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/transcripts_ui.tar.gz
+apps[downloadables][JSON-js 2.0] = http://apps.drupal-dev.shanti.virginia.edu/sites/default/files/apps/JSON-js.tar.gz

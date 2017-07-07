@@ -44,8 +44,11 @@ function shanti_kmaps_apps_app_modules_enabled($app) {
     $libraries_dir = $modules_dir . '/../libraries';
 
     system("cp -r " . $modules_dir . '/kmaps_modules/libraries/*' . " " . $libraries_dir);
-	system("cp -r" . $modules_dir . '/shanti_sarvaka_theme/' . " " . $modules_dir . '/../themes/shanti_sarvaka_theme');
-	system("cp -r" . $modules_dir . '/shanti_sarvaka_kmaps/' . " " . $modules_dir . '/../themes/shanti_sarvaka_kmaps');
+    system("cp -r " . $modules_dir . '/shanti_kmaps_typeahead' . " " . $libraries_dir);
+    system("cp -r " . $modules_dir . '/shanti_kmaps_tree' . " " . $libraries_dir);
+    system("cp -r " . $modules_dir . '/JSON-js/*' . " " . $libraries_dir . '/json2');
+    system("cp -r" . $modules_dir . '/shanti_sarvaka_theme/' . " " . $modules_dir . '/../themes/shanti_sarvaka_theme');
+    system("cp -r" . $modules_dir . '/shanti_sarvaka_kmaps/' . " " . $modules_dir . '/../themes/shanti_sarvaka_kmaps');
 
     //Modules to enable
     $modules_en = array(
@@ -53,7 +56,6 @@ function shanti_kmaps_apps_app_modules_enabled($app) {
         'json2',
         'ajaxsolr',
         'fancytree',
-        'kmaps_navigator',
         'shanti_admin_features',
         'shanti_kmaps_admin',
         'shanti_kmaps_tree',
@@ -65,6 +67,10 @@ function shanti_kmaps_apps_app_modules_enabled($app) {
         'pagerer',
         'views',
         'ctools',
+	'sharedshelf_api',
+	'transcripts_ui',
+	'shanti_kmaps_typeahead',
+	'typeahead',
     );
 
 	module_enable($modules_en);
@@ -95,4 +101,49 @@ function recurse_copy($src,$dst) {
         }
     }
     closedir($dir);
+}
+
+/**
+ * Implements hook_menu().
+ */
+function shanti_kmaps_menu() {
+    $items['places'] = array(
+        'title' => 'Places',
+	'page callback' => 'shanti_kmaps_redirect_to_places',
+	'access callback' => TRUE,
+    );
+    $items['subjects'] = array(
+        'title' => 'Subjects',
+	'page callback' => 'shanti_kmaps_redirect_to_subjects',
+	'access callback' => TRUE,
+    );
+
+    return $items;
+}
+
+/**
+ * Redirect to the default configured root of places.
+ */
+function shanti_kmaps_redirect_to_places() {
+    $places_root = variable_get('shanti_kmaps_admin_root_places_id', SHANTI_KMAPS_ADMIN_ROOT_PLACES_ID);
+    drupal_add_js(array('kmaps_explorer' => array('app' => 'places')), 'setting');
+    drupal_goto($path='places/' . $places_root . '/overview/nojs');
+}
+
+/**
+ * Redirect to the default configured root of subjects.
+ */
+function shanti_kmaps_redirect_to_subjects() {
+    $subjects_root = variable_get('shanti_kmaps_admin_root_subjects_id', SHANTI_KMAPS_ADMIN_ROOT_SUBJECTS_ID);
+    drupal_add_js(array('kmaps_explorer' => array('app' => 'subjects')), 'setting');
+    drupal_goto($path='subjects/' . $subjects_root . '/overview/nojs');
+}
+
+/**
+ * Implements hook_custom_theme().
+ */
+function shanti_kmaps_custom_theme() {
+    if (arg(0) == 'subjects' || arg(0) == 'places') {
+	return 'sarvaka_kmaps';
+    }
 }
